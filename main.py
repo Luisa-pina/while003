@@ -1,16 +1,18 @@
-# This is a sample Python script.
+import gtts
+from playsound import playsound
+said_the_right_thing = False
+while not said_the_right_thing:
+    question = input("Won't you take me with you")
+    good_answers = ["yes", "ok", "yeah", "yup", "fine", "YES"]
+    if question.lower() in good_answers:
+        said_the_right_thing = True
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+celebrate = "Hooray, You will take me with you today! and forever"
+speaker = gtts.gTTS(celebrate)
+speaker.save("speech1.mp3")
+playsound("speech1.mp3")
+creepy = "and ever!"
+speaker2 = gtts.gTTS(creepy)
+speaker2.save("creepy.mp3")
+for repeat in range(10):
+    playsound("creepy.mp3")
