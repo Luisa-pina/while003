@@ -5,4 +5,8 @@ books = ["Python Crash Course", "Game Programming",
 while "Python Crash Course" in books:
     books.remove("Python Crash Course")
 
+# for location in range(len(books)):
+#     if books[location] == "Python Crash Course":
+#         books.pop(location)
+
 print(books)
