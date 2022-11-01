@@ -10,6 +10,22 @@ for country_line in lines:
                       }
     country_data.append(pop_dictionary)
 
-#prove that it worked
-for nation in country_data:
-    print(nation)
+while True:
+    print("========Please select from the following=========")
+    print("[1] Find the largest country")
+    print("[2] Find the smallest country")
+    print("[3] Add a new country")
+    print("[4] Quit")
+    print("=================================================")
+    user_choice = input("Please enter the number of your selection:")
+    if user_choice == '1':
+        largest_so_far = country_data[0]
+        for current_country in country_data:
+            if current_country['pop'] > largest_so_far['pop']:
+                largest_so_far = current_country
+        print("+++++++++++++++++")
+        print(f"The largest country is {largest_so_far['Name']} with population {largest_so_far['pop']}")
+    elif user_choice == '2':
+
+    else:
+        print("Please select 1-4")
