@@ -22,6 +22,9 @@ def print_menu():
     print("=================================================")
 
 def main():
-    pass
+    country_list = get_data()
+    while True:
+        print_menu()
+        user_choice = input("Please enter the number of your selection:")
 
 main()
