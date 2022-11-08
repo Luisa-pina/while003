@@ -21,10 +21,31 @@ def print_menu():
     print("[4] Quit")
     print("=================================================")
 
+def find_largest(country_data):
+    largest_so_far = country_data[0]
+    for current_country in country_data:
+        if current_country['pop'] > largest_so_far['pop']:
+            largest_so_far = current_country
+    print("+++++++++++++++++")
+    print(f"The largest country is {largest_so_far['Name']} with population {largest_so_far['pop']}")
+
+
+def process_user_input(user_input, nations_pop):
+    if user_input == '1':
+        find_largest(nations_pop)
+    elif user_input == '2':
+        pass
+    elif user_input == '3':
+        pass
+    elif user_input=='4':
+        exit(0)
+    else:
+        print("Please select 1-4")
+
 def main():
     country_list = get_data()
     while True:
         print_menu()
         user_choice = input("Please enter the number of your selection:")
-
+        process_user_input(user_choice, country_list)
 main()
